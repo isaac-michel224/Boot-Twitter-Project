@@ -1,14 +1,20 @@
 package com.tts.TechTalentTwitter.service;
 
-@Service
-public class UserService {
+import com.tts.TechTalentTwitter.repository.EndUserRepository;
+import com.tts.TechTalentTwitter.repository.RoleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
-    private UserRepository userRepository;
+@Service
+public class EndUserService {
+
+    private EndUserRepository userRepository;
     private RoleRepository roleRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public UserService(UserRepository userRepository,
+    public EndUserService(EndUserRepository userRepository,
                        RoleRepository roleRepository,
                        BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
